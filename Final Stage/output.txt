@@ -1,0 +1,30 @@
+#include "Header.h"
+#include <time.h>
+
+int main()
+{
+	clock_t start, finish;
+	double elapsed_time;
+
+	start = clock();//inceput
+
+	struct node* last = nullptr;
+	int i = 0;
+	last = addToEmpty(last, 23);
+	while (i <= 9999)
+	{
+		last = insertEnd(i + 1, last);
+		i++;
+	}
+
+	printList(last);
+
+	finish = clock();
+	elapsed_time = (double)(finish - start) / CLOCKS_PER_SEC;
+	cout << "Acest program a durat " << elapsed_time << " secunde" << endl;
+
+
+	//6.34 sec pt 10000 numere
+	system("PAUSE");
+	return 0;
+}
